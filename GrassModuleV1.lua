@@ -151,7 +151,7 @@ function self.Initiate()
 		topAttachment.Name = tostring(globalCounter)
 		bottomAttachment.Name = tostring(globalCounter).. "Bottom"
 		params.FilterDescendantsInstances = playerArray
-		local raycastResult = workspace:Raycast(Vector3.new(rng.Position.X,self.RaycastY,rng.Position.Z), Vector3.new(0,-self.RaycastY,0) * 10,params)
+		local raycastResult = workspace:Raycast(Vector3.new(rng.Position.X,self.RaycastY + humanoidRootPart.Position.Y,rng.Position.Z), Vector3.new(0,-self.RaycastY,0) * 10,params)
 		
 		if raycastResult then
 			bottomAttachment.Position = Vector3.new(rng.Position.X, raycastResult.Position.Y - self.yOffset,rng.Position.Z)
